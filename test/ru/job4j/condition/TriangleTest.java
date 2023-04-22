@@ -1,13 +1,15 @@
 package ru.job4j.condition;
 
-import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TriangleTest {
     @Test
     public void whenExist() {
-        boolean result = Triangle.exist(12.0, 10.0, 16.0);
-        assertThat(result, is(true));
+        double ab = 2.0;
+        double ac = 2.0;
+        double bc = 2.0;
+        boolean result = Triangle.exist(ab, ac, bc);
+        assertThat(result).isTrue();
     }
 }
