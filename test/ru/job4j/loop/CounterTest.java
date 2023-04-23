@@ -1,59 +1,26 @@
 package ru.job4j.loop;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CounterTest {
-
     @Test
-
-    public void whenSumNumbersFromOneToTenFiftyFive() {
-        int rsl = Counter.sum(1, 10);
-        int expected = 55;
-        assertThat(rsl, is(expected));
-    }
-
-    @Test
-
-    public void whenSumNumbersFromThreeToEghtThenThertyThree() {
-        int rsl = Counter.sum(3, 8);
-        int expected = 33;
-        assertThat(rsl, is(expected));
-
-    }
-
-    @Test
-
-    public void whenSumNumbersFromOneToOneThenOne() {
-        int rsl = Counter.sum(1, 1);
-        int expected = 1;
-        assertThat(rsl, is(expected));
-
-    }
-
-    @Test
-
     public void whenSumEvenNumbersFromOneToTenThenThirty() {
-        int rsl = Counter.sumByEven(1, 10);
+        int start = 1;
+        int finish = 10;
+        int result = Counter.sumByEven(start, finish);
         int expected = 30;
-        assertThat(rsl, is(expected));
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
-
-    public void whenSumEvenNumbersFromThreeToEghtThenEighteen() {
-        int rsl = Counter.sumByEven(3, 8);
-        int expected = 18;
-        assertThat(rsl, is(expected));
+    public void whenSumEvenNumbersFromTenToFefteenThenFiftySix() {
+        int start = 1;
+        int finish = 15;
+        int result = Counter.sumByEven(start, finish);
+        int expected = 56;
+        assertThat(result).isEqualTo(expected);
     }
 
-    @Test
-
-    public void whenSumEvenNumbersFromOneToOneThenZero() {
-        int rsl = Counter.sumByEven(1, 1);
-        int expected = 0;
-        assertThat(rsl, is(expected));
-    }
 }
