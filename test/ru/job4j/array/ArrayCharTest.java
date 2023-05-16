@@ -1,8 +1,8 @@
 package ru.job4j.array;
 
-import org.junit.Test;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ArrayCharTest {
     @Test
@@ -10,7 +10,7 @@ public class ArrayCharTest {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] pref = {'H', 'e'};
         boolean result = ArrayChar.startsWith(word, pref);
-        assertThat(result, is(true));
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -18,6 +18,6 @@ public class ArrayCharTest {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] pref = {'H', 'i'};
         boolean result = ArrayChar.startsWith(word, pref);
-        assertThat(result, is(false));
+        assertThat(result).isFalse();
     }
 }
