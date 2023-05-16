@@ -1,19 +1,16 @@
 package ru.job4j.array;
 
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
-
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class EndsWithTest {
-
     @Test
     public void whenEndWithPrefixThenTrue() {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] post = {'l', 'o'};
         boolean result = EndsWith.endsWith(word, post);
-        assertThat(result, is(true));
+        assertThat(result).isTrue();
     }
 
     @Test
@@ -21,6 +18,6 @@ public class EndsWithTest {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] post = {'l', 'a'};
         boolean result = EndsWith.endsWith(word, post);
-        assertThat(result, is(false));
+        assertThat(result).isFalse();
     }
 }
