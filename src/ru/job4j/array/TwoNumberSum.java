@@ -4,10 +4,8 @@ public class TwoNumberSum {
     public static int[] getIndexes(int[] array, int target) {
         int pointerOne = 0;
         int pointerTwo = array.length - 1;
-
         while (pointerOne < pointerTwo) {
             int sum = array[pointerOne] + array[pointerTwo];
-
             if (sum == target) {
                 return new int[]{pointerOne, pointerTwo};
             } else if (sum < target) {
